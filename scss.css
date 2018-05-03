@@ -1,0 +1,19 @@
+@mixin ring($size, $color) {
+    background:transparent;
+    border-radius:50%;
+    width: $size px;
+    height: $size px;
+    border:($size/10)px solid $color;
+    margin: -($size*(2/3))px 0 0 ($size*(-1/3))px;
+    box-shadow: inset ($size/10)px ($size/10)px ($size/10)px, ($size/10)px ($size/10)px ($size/10)px;
+}
+
+@for $i from 1 through 6 {
+    .ring-#{$i} {
+    @include ring(30*$i, #383838)
+    }
+}
+
+.ring-yellow {
+@include ring(300, #FFD700)
+}
